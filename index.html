@@ -22,13 +22,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
+                        sans: ['Public Sans', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -106,11 +108,11 @@
     <!-- Header & Hero Section -->
     <header class="relative bg-gradient-to-b from-[#05010d] via-[#030008] to-[#05010d] overflow-hidden">
         <!-- Navigation -->
-        <nav class="w-full bg-transparent pt-12 md:pt-8 pb-8 px-6 relative z-20">
+        <nav class="w-full bg-transparent pt-6 md:pt-8 pb-4 px-6 relative z-20">
             <div class="container mx-auto flex items-center justify-center md:justify-between max-w-[1200px]">
                 <!-- Logo -->
                 <a href="#" class="flex items-center group">
-                    <img src="images/LOGO.webp" alt="Zoop" class="h-14.5 md:h-12 hover:brightness-110 transition-all">
+                    <img src="images/LOGO.webp" alt="Zoop" class="h-[75px] mt-4 md:h-12 hover:brightness-110 transition-all">
                 </a>
                 
                 <!-- Desktop Nav Links -->
@@ -118,7 +120,7 @@
                     <a href="#depoimentos" class="text-white text-[14px] font-[500] hover:text-brand-purple transition-colors">Depoimentos</a>
                     <a href="#clientes" class="text-white text-[14px] font-[500] hover:text-brand-purple transition-colors">Clientes</a>
                     <a href="#sobre" class="text-white text-[14px] font-[500] hover:text-brand-purple transition-colors">Sobre a Zoop</a>
-                    <a href="#contato" class="bg-gradient-to-r from-brand-purple to-brand-pink text-white px-7 py-2.5 rounded-xl font-[700] text-[14px] uppercase tracking-wide hover:scale-105 transition-all shadow-lg shadow-purple-500/20">Contrate</a>
+                    <a href="#contato" class="font-sans hidden md:block bg-gradient-to-r from-brand-purple to-brand-pink text-white px-[24px] py-[10px] rounded-[3px] font-[700] hover:scale-105 transition-all text-[15px] shadow-[0_4px_15px_rgba(217,70,239,0.3)]">Contrate</a>
                 </div>
             </div>
         </nav>
@@ -130,31 +132,32 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="container mt-10  mb-10 mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center pt-4 lg:pt-24 pb-6 lg:pb-12">
+        <div class="container mt-2 md:mt-10 mb-10 mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center pt-2 lg:pt-24 pb-6 lg:pb-12">
             <div class="max-w-[460px] lg:max-w-none w-full">
                  <!-- Título Mobile -->
-                 <h1 class="lg:hidden text-[32px] md:text-[38px] font-[800] leading-[1.12] mb-6 tracking-tight text-white w-full mx-auto">
-                     A maior assessoria de<br>
-                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(217,70,239,0.5)]">Marketing para</span><br>
+                 <h1 class="font-sans lg:hidden text-[32px] font-[800] leading-[1.25] mb-6 mt-4 tracking-tight text-white w-full max-w-[360px] mx-auto text-center">
+                     A maior assessoria<br>
+                     de <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(217,70,239,0.5)]">Marketing para</span><br>
                      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(217,70,239,0.5)]">Restaurantes</span> de<br>
-                     Cachoeiro de Itapemirim
+                     Cachoeiro de<br>
+                     Itapemirim
                  </h1>
 
                  <!-- Título Desktop -->
-                 <h1 class="hidden lg:block text-[44px] lg:text-[50px] xl:text-[56px] font-[700] leading-[1.10] mb-6 tracking-tight text-white w-full mx-auto">
+                 <h1 class="font-sans hidden lg:block text-[44px] lg:text-[50px] xl:text-[56px] font-[800] leading-[1.10] mb-6 tracking-tight text-white w-full mx-auto">
                      A maior assessoria de <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(217,70,239,0.5)]">Marketing</span><br>
                      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(217,70,239,0.5)]">para Restaurantes</span> de Cachoeiro de Itapemirim
                  </h1>
                  
                  <!-- Parágrafo -->
-                 <p class="text-[#e2e8f0] text-[14px] sm:text-[14px] lg:text-[16px] mb-12 lg:mb-6 max-w-none mx-auto font-normal leading-[1.6]">
-                     <span class="lg:hidden block text-center">A assessoria que mais entrega resultados para<br>restaurantes em Cachoeiro de Itapemirim. Com +70<br>empresas atendidas dentro e fora do Brasil.</span>
-                     <span class="hidden lg:block">A assessoria que mais entrega resultados para restaurantes em Cachoeiro de Itapemirim,<br>
+                 <p class="font-sans text-[#e2e8f0] text-[16px] lg:text-[18px] mb-12 lg:mb-6 max-w-none mx-auto font-[400] leading-[1.6]">
+                     <span class="lg:hidden block text-center">A assessoria que mais entrega resultados para restaurantes em Cachoeiro de Itapemirim. Com +70 empresas atendidas<br>dentro e fora do Brasil.</span>
+                     <span class="hidden lg:block">A assessoria que mais entrega resultados para restaurantes em Cachoeiro de Itapemirim,
                      com +70 empresas atendidas dentro e fora do Brasil.</span>
                  </p>
                  
                  <!-- Botão -->
-                 <a href="#contato" class="block sm:inline-block w-full sm:w-auto bg-gradient-to-r from-brand-purple to-brand-pink text-white py-[14px] lg:py-[16px] px-10 rounded-xl font-[700] text-[15px] lg:text-[16px] uppercase tracking-wide hover:scale-105 transition-all shadow-[0_0_20px_rgba(217,70,239,0.3)] mt-2">
+                 <a href="#contato" class="font-sans inline-flex items-center justify-center bg-gradient-to-r from-brand-purple to-brand-pink text-white py-[16px] px-[50px] rounded-[5px] font-[700] text-[18px] leading-none hover:scale-105 transition-all shadow-[0_4px_25px_rgba(217,70,239,0.4)] mt-2 w-auto mx-auto max-w-full">
                      Agende já uma reunião
                  </a>
             </div>
@@ -163,87 +166,92 @@
 
     <!-- Form Section -->
     <section id="contato" class="pt-2 lg:pt-6 pb-8 relative bg-[#05010d]">
-        <div class="container  mx-auto px-5 lg:px-6 relative z-10 flex justify-center">
+        <div class="container mx-auto px-5 lg:px-6 relative z-10 flex justify-center">
             
+            <!-- Glowing Background element that harmonizes with their site colors -->
+            <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+                <div class="w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-gradient-to-br from-brand-purple to-brand-pink rounded-full blur-[120px] opacity-[0.15]"></div>
+            </div>
+
             <!-- Form Card desktop 2-col, mobile 1-col -->
-            <div class="w-full max-w-[460px] lg:max-w-[1300px] glass-card rounded-[12px] lg:rounded-[24px] p-8 lg:p-14 shadow-2xl relative z-20">
+            <div class="w-full max-w-[460px] lg:max-w-[1300px] bg-[#1a1a1a] rounded-[12px] lg:rounded-[24px] p-8 lg:p-14 relative z-20 border border-white/5">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
                     
                     <!-- Left Column (Text & Steps) -->
-                    <div class="flex flex-col">
-                        <h2 class="text-[28px] lg:text-[40px] font-[700] mb-12 text-white leading-[1.1] text-left tracking-tight">
-                            Cadastre-se e receba o<br class="hidden lg:block"> contato do nosso time!
+                    <!-- Left Column (Text & Steps) -->
+                    <div class="flex flex-col items-center xl:items-start text-center xl:text-left">
+                        <h2 class="font-sans text-[36px] lg:text-[44px] font-[700] mb-10 lg:mb-12 text-white leading-[1.15] tracking-tight max-w-[400px]">
+                            Cadastre-se e<br>
+                            receba o contato<br>
+                            do nosso time!
                         </h2>
                         
                         <!-- Passo 1 -->
-                        <div class="flex items-center justify-start gap-4 mb-10">
-                            <div class="h-[1px] bg-brand-purple w-20 lg:w-32"></div>
-                            <span class="text-brand-purple text-[16px] font-[600] uppercase tracking-wider">Passo 1</span>
+                        <div class="flex items-center justify-start gap-4 mb-4 lg:mb-8 w-full max-w-[400px]">
+                            <div class="h-[1px] bg-gradient-to-r from-brand-purple to-brand-pink w-16 lg:w-32"></div>
+                            <span class="font-sans font-[500] uppercase tracking-wider text-[14px] lg:text-[16px] text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink">Passo 1</span>
                         </div>
                         
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left mb-16 w-full">
-                            <div class="w-[60px] h-[60px] bg-gradient-to-br from-brand-purple to-brand-pink rounded-[15px] flex items-center justify-center shrink-0 mb-6 lg:mb-0 lg:mr-6 shadow-lg shadow-purple-500/30">
-                                <i data-lucide="user" class="w-8 h-8 text-white" stroke-width="2.5"></i>
+                        <div class="flex flex-col items-center xl:items-start text-center xl:text-left mb-12 lg:mb-16 w-full max-w-[400px]">
+                            <div class="w-[56px] h-[56px] lg:w-[64px] lg:h-[64px] bg-gradient-to-br from-brand-purple to-brand-pink rounded-[8px] flex items-center justify-center shrink-0 mb-4 lg:mb-6 shadow-[0_4px_15px_rgba(217,70,239,0.3)]">
+                                <i data-lucide="user" class="w-7 h-7 lg:w-8 lg:h-8 text-white" stroke-width="2"></i>
                             </div>
-                            <div class="w-full">
-                                <h3 class="text-white font-[800] text-[20px] mb-3 lg:mt-1">Complete o formulário</h3>
-                                <p class="text-gray-400 text-[15px] leading-[1.7] lg:max-w-[400px] w-full text-center lg:text-left font-light">
-                                    <span class="lg:hidden block">Forneça suas informações de contato.<br>Garantimos a segurança total de seus<br>dados. Serão usados apenas para<br>contato.</span>
-                                    <span class="hidden lg:block">Forneça suas informações de contato. Garantimos a segurança total de seus dados. Serão usados apenas para contato.</span>
-                                </p>
-                            </div>
+                            <h3 class="font-sans text-white font-[700] text-[20px] lg:text-[24px] mb-2 lg:mb-3">Complete o formulário</h3>
+                            <p class="font-sans text-gray-300 text-[14px] lg:text-[16px] leading-[1.6] max-w-[280px] lg:max-w-none font-[400]">
+                                Forneça suas informações de<br class="lg:hidden xl:block"> contato. Garantimos a segurança<br class="lg:hidden xl:block"> total de seus dados. Serão usados<br class="lg:hidden xl:block"> apenas para contato.
+                            </p>
                         </div>
                         
                         <!-- Passo 2 -->
-                        <div class="flex items-center justify-start gap-4 mb-10">
-                            <div class="h-[1px] bg-brand-purple w-20 lg:w-32"></div>
-                            <span class="text-brand-purple text-[16px] font-[600] uppercase tracking-wider">Passo 2</span>
+                        <div class="flex items-center justify-start gap-4 mb-4 lg:mb-8 w-full max-w-[400px]">
+                            <div class="h-[1px] bg-gradient-to-r from-brand-purple to-brand-pink w-16 lg:w-32"></div>
+                            <span class="font-sans font-[500] uppercase tracking-wider text-[14px] lg:text-[16px] text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink">Passo 2</span>
                         </div>
                         
-                        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left w-full">
-                            <div class="w-[60px] h-[60px] bg-gradient-to-br from-brand-purple to-brand-pink rounded-[15px] flex items-center justify-center shrink-0 mb-6 lg:mb-0 lg:mr-6 shadow-lg shadow-purple-500/30">
-                                <i data-lucide="phone-call" class="w-8 h-8 text-white" stroke-width="2.5"></i>
+                        <div class="flex flex-col items-center xl:items-start text-center xl:text-left w-full max-w-[400px]">
+                            <div class="w-[56px] h-[56px] lg:w-[64px] lg:h-[64px] bg-gradient-to-br from-brand-purple to-brand-pink rounded-[8px] flex items-center justify-center shrink-0 mb-4 lg:mb-6 shadow-[0_4px_15px_rgba(217,70,239,0.3)]">
+                                <i data-lucide="phone-call" class="w-7 h-7 lg:w-8 lg:h-8 text-white" stroke-width="2"></i>
                             </div>
-                            <div class="w-full">
-                                <h3 class="text-white font-[800] text-[20px] mb-3 lg:mt-1">Receba uma ligação personalizada</h3>
-                                <p class="text-gray-400 text-[15px] leading-[1.7] lg:max-w-[400px] w-full text-center lg:text-left font-light">
-                                    <span class="lg:hidden block">Em um prazo de até 8 horas, um dos nossos<br>especialistas entrará em contato diretamente<br>para agendar a reunião mais crucial com você.</span>
-                                    <span class="hidden lg:block">Em um prazo de até 8 horas, um dos nossos especialistas entrará em contato diretamente para agendar a reunião mais crucial com você.</span>
-                                </p>
-                            </div>
+                            <h3 class="font-sans text-white font-[700] text-[20px] lg:text-[24px] mb-2 lg:mb-3 leading-[1.2]">Receba uma ligação<br>personalizada</h3>
+                            <p class="font-sans text-gray-300 text-[14px] lg:text-[16px] leading-[1.6] max-w-[280px] lg:max-w-none font-[400]">
+                                Em um prazo de até 8 horas, um dos<br class="lg:hidden xl:block"> nossos especialistas entrará em<br class="lg:hidden xl:block"> contato diretamente para agendar a<br class="lg:hidden xl:block"> reunião mais crucial com você.
+                            </p>
                         </div>
                     </div>
 
                     <!-- Right Column (Form Inputs) -->
-                    <div class="flex flex-col justify-center mt-6 lg:mt-0">
+                    <div class="flex flex-col justify-center mt-6 lg:mt-0 font-sans">
                         <form id="lead-form" class="flex flex-col gap-4">
-                            <input type="text" id="nome" name="nome" placeholder="Qual é o seu nome e sobrenome?" required class="w-full bg-black/40 border border-white/10 rounded-md px-4 py-4 text-white text-[15px] placeholder-gray-500 focus:outline-none focus:border-brand-purple transition-all outline-none">
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required class="font-sans w-full bg-[#333333] border border-transparent rounded-[4px] px-5 py-4 lg:py-[18px] text-white text-[16px] lg:text-[18px] placeholder-gray-400 focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition-all outline-none">
                             
-                            <input type="email" id="email" name="email" placeholder="Qual seu e-mail corporativo?" required class="w-full bg-black/40 border border-white/10 rounded-md px-4 py-4 text-white text-[15px] placeholder-gray-500 focus:outline-none focus:border-brand-purple transition-all outline-none">
+                            <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required class="font-sans w-full bg-[#333333] border border-transparent rounded-[4px] px-5 py-4 lg:py-[18px] text-white text-[16px] lg:text-[18px] placeholder-gray-400 focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition-all outline-none">
                             
-                            <input type="text" id="empresa" name="empresa" placeholder="Qual o nome da sua empresa?" required class="w-full bg-black/40 border border-white/10 rounded-md px-4 py-4 text-white text-[15px] placeholder-gray-500 focus:outline-none focus:border-brand-purple transition-all outline-none">
-                            
-                            <div class="relative">
-                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium text-[13px]">BR +55</span>
-                                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required class="w-full bg-black/40 border border-white/10 rounded-md pl-[70px] pr-4 py-4 text-white text-[15px] placeholder-gray-500 focus:outline-none focus:border-brand-purple transition-all outline-none">
+                            <div class="relative flex bg-[#333333] rounded-[4px] overflow-hidden focus-within:ring-1 focus-within:ring-brand-purple focus-within:border-brand-purple transition-all border border-transparent">
+                                <div class="flex items-center pl-4 pr-2 bg-transparent">
+                                    <img src="https://flagcdn.com/w20/br.png" alt="BR Flag" class="w-5 h-auto rounded-[2px]">
+                                    <svg class="w-3 h-3 text-gray-400 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                                <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required class="font-sans w-full bg-transparent px-2 py-4 lg:py-[18px] text-white text-[16px] lg:text-[18px] placeholder-gray-400 focus:outline-none outline-none">
                             </div>
+
+                            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required class="font-sans w-full bg-[#333333] border border-transparent rounded-[4px] px-5 py-4 lg:py-[18px] text-white text-[16px] lg:text-[18px] placeholder-gray-400 focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition-all outline-none">
                             
-                            <select id="faturamento" name="faturamento" required class="w-full bg-black/40 border border-white/10 rounded-md px-4 py-4 text-gray-400 text-[15px] focus:outline-none focus:border-brand-purple transition-all appearance-none cursor-pointer outline-none">
-                                <option value="">Qual o faturamento mensal da sua empresa?</option>
-                                <option value="ate-50k">Até R$ 50.000</option>
-                                <option value="50k-100k">R$ 50.000 a R$ 100.000</option>
-                                <option value="100k-mais">Acima de R$ 100.000</option>
+                            <select id="segmento" name="segmento" required class="font-sans w-full bg-[#333333] border border-transparent rounded-[4px] px-5 py-4 lg:py-[18px] text-gray-400 text-[16px] lg:text-[18px] focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition-all appearance-none cursor-pointer outline-none">
+                                <option value="" disabled selected hidden>Qual seu segmento?</option>
+                                <option value="delivery" class="text-white">Delivery</option>
+                                <option value="salao" class="text-white">Salão</option>
+                                <option value="misto" class="text-white">Misto</option>
                             </select>
 
-                            <select id="segmento" name="segmento" required class="w-full bg-black/40 border border-white/10 rounded-md px-4 py-4 text-gray-400 text-[15px] focus:outline-none focus:border-brand-purple transition-all appearance-none cursor-pointer outline-none">
-                                <option value="">Qual o seu segmento?</option>
-                                <option value="delivery">Delivery</option>
-                                <option value="salao">Salão</option>
-                                <option value="misto">Misto</option>
+                            <select id="faturamento" name="faturamento" required class="font-sans w-full bg-[#333333] border border-transparent rounded-[4px] px-5 py-4 lg:py-[18px] text-gray-400 text-[16px] lg:text-[18px] focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition-all appearance-none cursor-pointer outline-none">
+                                <option value="" disabled selected hidden>Qual o seu faturamento mensal?</option>
+                                <option value="ate-50k" class="text-white">Até R$ 50.000</option>
+                                <option value="50k-100k" class="text-white">R$ 50.000 a R$ 100.000</option>
+                                <option value="100k-mais" class="text-white">Acima de R$ 100.000</option>
                             </select>
 
-                            <button id="submit-btn" type="submit" class="w-full bg-gradient-to-r from-brand-purple to-brand-pink text-white py-4 rounded-xl mt-4 uppercase tracking-wide hover:scale-105 transition-all shadow-[0_0_20px_rgba(217,70,239,0.3)] text-[16px] font-[700] outline-none">
-                                Solicitar Diagnóstico
+                            <button id="submit-btn" type="submit" class="font-sans w-full flex items-center justify-center bg-gradient-to-r from-brand-purple to-brand-pink text-white py-[16px] px-[30px] rounded-[3px] mt-4 hover:scale-105 transition-transform shadow-[0_4px_15px_rgba(217,70,239,0.3)] text-[18px] font-[700] leading-none outline-none">
+                                Solicitar diagnóstico
                             </button>
                         </form>
                     </div>
@@ -259,11 +267,11 @@
     <section id="clientes" class="pt-8 pb-12 relative bg-[#05010d]">
         <div class="container mx-auto px-6 max-w-[1200px]">
             <div class="flex flex-col items-center justify-center mb-10">
-                <div class="border border-brand-purple text-brand-purple px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6">
+                <div class="font-sans bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 border border-brand-purple/30 text-brand-purple px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
                     Clientes Zoop
                 </div>
                 <!-- "CLIENTES LOGO" equivalent in mock -->
-                <h2 class="text-3xl md:text-4xl font-[700] text-center mb-2">Alguns clientes que já escalamos</h2>
+                <h2 class="font-sans text-3xl md:text-4xl font-[700] text-center mb-2">Alguns clientes que já escalamos</h2>
             </div>
         </div>
 
@@ -281,7 +289,7 @@
                             <span class="font-bold text-[11px] text-gray-300 group-hover:text-white transition-colors truncate">Center Fit</span>
                         </div>
                         <div>
-                            <p class="text-2xl font-black text-white tracking-tighter leading-none">+200%</p>
+                            <p class="text-2xl font-[800] text-white tracking-tighter leading-none">+200%</p>
                             <p class="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-widest">Crescimento</p>
                         </div>
                     </div>
@@ -295,7 +303,7 @@
                             <span class="font-bold text-[11px] text-gray-300 group-hover:text-white transition-colors truncate">Chefe Perfumes</span>
                         </div>
                         <div>
-                            <p class="text-xl font-black text-white tracking-tighter leading-none">Recorde</p>
+                            <p class="text-xl font-[800] text-white tracking-tighter leading-none">Recorde</p>
                             <p class="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-widest">De Vendas</p>
                         </div>
                     </div>
@@ -309,7 +317,7 @@
                             <span class="font-bold text-[11px] text-gray-300 group-hover:text-white transition-colors truncate">Met. Lorençoni</span>
                         </div>
                         <div>
-                            <p class="text-2xl font-black text-white tracking-tighter leading-none">+160%</p>
+                            <p class="text-2xl font-[800] text-white tracking-tighter leading-none">+160%</p>
                             <p class="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-widest">Vendas</p>
                         </div>
                     </div>
@@ -323,7 +331,7 @@
                             <span class="font-bold text-[11px] text-gray-300 group-hover:text-white transition-colors truncate">Mc Ronalds</span>
                         </div>
                         <div>
-                            <p class="text-xl font-black text-white tracking-tighter leading-none">Recorde</p>
+                            <p class="text-xl font-[800] text-white tracking-tighter leading-none">Recorde</p>
                             <p class="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-widest">De Vendas</p>
                         </div>
                     </div>
@@ -337,7 +345,7 @@
                             <span class="font-bold text-[11px] text-gray-300 group-hover:text-white transition-colors truncate">RC Store</span>
                         </div>
                         <div>
-                            <p class="text-xl font-black text-white tracking-tighter leading-none">Recorde</p>
+                            <p class="text-xl font-[800] text-white tracking-tighter leading-none">Recorde</p>
                             <p class="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-widest">De Vendas</p>
                         </div>
                     </div>
@@ -351,13 +359,13 @@
                             <span class="font-bold text-[11px] text-gray-300 group-hover:text-white transition-colors truncate">CT</span>
                         </div>
                         <div>
-                            <p class="text-2xl font-black text-white tracking-tighter leading-none">+120%</p>
+                            <p class="text-2xl font-[800] text-white tracking-tighter leading-none">+120%</p>
                             <p class="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-widest">Alunos</p>
                         </div>
                     </div>
 
                     <!-- Tonny Lanches -->
-                    <div class="glass-card p-4 rounded-2xl w-[180px] h-[120px] shrink-0 flex flex-col justify-between hover:bg-white/5 transition-colors group border-white/5">
+                    <div class="glass-card p-4 rounded-2xl w-[180px] h-[120px] shrink-0 flex flex-col justify-between hover:bg-white/5 transition-colors group border-white/5 font-sans">
                         <div class="flex items-center gap-3 mb-2">
                             <div class="w-8 h-8 rounded-full overflow-hidden shrink-0 border border-white/10">
                                 <img src="logos-clientes/tonny-lanches.webp" class="w-full h-full object-cover" alt="Tonny Lanches">
@@ -365,7 +373,7 @@
                             <span class="font-bold text-[11px] text-gray-300 group-hover:text-white transition-colors truncate">Tonny Lanches</span>
                         </div>
                         <div>
-                            <p class="text-2xl font-black text-white tracking-tighter leading-none">+180%</p>
+                            <p class="text-2xl font-[800] text-white tracking-tighter leading-none">+180%</p>
                             <p class="text-[10px] text-gray-500 font-medium mt-1 uppercase tracking-widest">Pedidos</p>
                         </div>
                     </div>
@@ -374,29 +382,29 @@
             </div>
         </div>
 
-        <div class="flex justify-center px-6">
-            <a href="#contato" class="w-full sm:w-auto bg-gradient-to-r from-brand-purple to-brand-pink text-white px-8 py-4 rounded-xl font-bold text-sm hover:scale-105 transition-all text-center uppercase tracking-wide shadow-[0_0_20px_rgba(217,70,239,0.3)]">
-                Seja mais um restaurante de Sucesso
-            </a>
-        </div>
+            <div class="mt-16 flex justify-center text-white relative z-10 w-full px-4">
+                <a href="#contato" class="font-sans inline-flex items-center justify-center bg-gradient-to-r from-brand-purple to-brand-pink text-white py-[16px] px-[30px] rounded-[3px] font-[700] text-[18px] leading-none hover:scale-105 transition-transform shadow-[0_4px_15px_rgba(217,70,239,0.3)] tracking-wide relative z-10 w-auto text-center mx-auto max-w-full">
+                    Seja mais um Case de Sucesso
+                </a>
+            </div>
     </section>
 
     <!-- Estrutura (Transparência/Vídeo) -->
     <section id="estrutura" class="pt-8 pb-12 relative bg-[#020005]">
         <div class="container mx-auto px-6 max-w-[1140px] flex flex-col items-center">
             
-            <div class="border border-brand-purple text-brand-purple px-5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-12">
+            <div class="font-sans bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 border border-brand-purple/30 text-brand-purple px-5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-12 backdrop-blur-sm">
                 estrutura
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
                 <!-- Left Text -->
                 <div class="text-center lg:text-left">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6">
+                    <h2 class="font-sans text-3xl md:text-4xl lg:text-5xl font-[700] mb-6">
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(217,70,239,0.5)]">Empresa Real</span> <br>
-                        <span class="opacity-60 text-2xl md:text-3xl font-medium block mt-2 leading-tight">com sede em Cachoeiro de Itapemirim!</span>
+                        <span class="opacity-60 text-2xl md:text-3xl font-[600] block mt-2 leading-tight">com sede em Cachoeiro de Itapemirim!</span>
                     </h2>
-                    <p class="text-gray-400 text-base md:text-lg mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    <p class="font-roboto text-gray-400 text-base md:text-lg mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0 font-[400]">
                         A Zoop Company é uma empresa focada em você, dono de restaurante na região de Cachoeiro de Itapemirim, com mais de 10 profissionais e uma estrutura de ponta.
                     </p>
                 </div>
@@ -414,11 +422,11 @@
     <section id="depoimentos" class="pt-8 pb-20 relative bg-[#05010d]">
         <div class="container mx-auto px-6 max-w-[1140px] flex flex-col items-center">
             
-            <div class="border border-brand-purple text-brand-purple px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6">
+            <div class="font-sans bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 border border-brand-purple/30 text-brand-purple px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
                 Depoimentos
             </div>
             
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-[700] text-center mb-16 tracking-tight max-w-2xl">
+            <h2 class="font-sans text-3xl md:text-4xl lg:text-5xl font-[700] text-center mb-16 tracking-tight max-w-2xl">
                 Os nossos clientes<br>falam por nós
             </h2>
 
@@ -439,44 +447,49 @@
 
     <!-- O que faremos / Checklist -->
     <section id="servicos" class="py-20 lg:py-32 relative bg-[#05010d]">
-        <div class="container mx-auto px-6 max-w-[1440px]">
-            <div class="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+        <div class="container mx-auto px-6 max-w-[1440px] flex flex-col items-center lg:items-start text-center lg:text-left">
+            
+            <div class="font-sans bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 border border-brand-purple/30 text-brand-purple px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-sm">
+                O que faremos?
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center w-full">
                 
                 <!-- Left Column: Title & Checklist -->
                 <div class="flex flex-col text-center lg:text-left relative z-10">
-                    <h2 class="text-[32px] md:text-[46px] lg:text-[52px] font-[700] mb-8 lg:mb-6 leading-[1.1] tracking-tight text-white">
+                    <h2 class="font-sans text-[32px] md:text-[46px] lg:text-[52px] font-[700] mb-8 lg:mb-6 leading-[1.1] tracking-tight text-white">
                         Entenda como podemos agregar ao seu restaurante e fazer vender 5X mais!
                     </h2>
 
                     <!-- Checklist -->
-                    <div class="w-full space-y-4 lg:space-y-3.5 text-[#e2e8f0] text-left max-w-[500px] lg:max-w-none mx-auto lg:mx-0">
+                    <div class="font-sans w-full space-y-4 lg:space-y-4 text-[#e2e8f0] text-left max-w-[500px] lg:max-w-none mx-auto lg:mx-0">
                         <div class="flex items-start gap-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
-                            <span class="text-[15px] lg:text-[17px] font-[500] tracking-wide">Aumentar o número de pedidos no delivery</span>
+                            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
+                            <span class="font-[300] text-[18px] lg:text-[20px] tracking-wide">Aumentar o número de pedidos no delivery</span>
                         </div>
                         <div class="flex items-start gap-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
-                            <span class="text-[15px] lg:text-[17px] font-[500] tracking-wide">Não depender das plataformas para vender</span>
+                            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
+                            <span class="font-[300] text-[18px] lg:text-[20px] tracking-wide">Não depender das plataformas para vender</span>
                         </div>
                         <div class="flex items-start gap-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
-                            <span class="text-[15px] lg:text-[17px] font-[500] tracking-wide">Aumentar o movimento no salão</span>
+                            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
+                            <span class="font-[300] text-[18px] lg:text-[20px] tracking-wide">Aumentar o movimento no salão</span>
                         </div>
                         <div class="flex items-start gap-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
-                            <span class="text-[15px] lg:text-[17px] font-[500] tracking-wide">Ações de marketing e mensuração de resultados</span>
+                            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
+                            <span class="font-[300] text-[18px] lg:text-[20px] tracking-wide">Ações de marketing e mensuração de resultados</span>
                         </div>
                         <div class="flex items-start gap-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
-                            <span class="text-[15px] lg:text-[17px] font-[500] tracking-wide">Entender os seus indicadores de resultados</span>
+                            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
+                            <span class="font-[300] text-[18px] lg:text-[20px] tracking-wide">Entender os seus indicadores de resultados</span>
                         </div>
                         <div class="flex items-start gap-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
-                            <span class="text-[15px] lg:text-[17px] font-[500] tracking-wide">Acelerar o seu crescimento</span>
+                            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
+                            <span class="font-[300] text-[18px] lg:text-[20px] tracking-wide">Acelerar o seu crescimento</span>
                         </div>
                         <div class="flex items-start gap-4">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
-                            <span class="text-[15px] lg:text-[17px] font-[500] tracking-wide">Tornar a sua empresa referência no mercado</span>
+                            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-purple shrink-0 mt-0.5" stroke-width="2.5"></i>
+                            <span class="font-[300] text-[18px] lg:text-[20px] tracking-wide">Tornar a sua empresa referência no mercado</span>
                         </div>
                     </div>
                 </div>
@@ -487,17 +500,17 @@
                         <!-- Subtle card glow -->
                         <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-purple/20 rounded-full blur-[80px]"></div>
                         
-                        <h3 class="text-[18px] md:text-[22px] font-[800] mb-8 text-white leading-[1.6] tracking-wide relative z-10">
+                        <h3 class="font-sans text-[18px] md:text-[22px] font-[700] mb-8 text-white leading-[1.6] tracking-wide relative z-10">
                             O NOSSO TRABALHO É <span class="text-brand-purple">EXCLUSIVO</span> PARA
                             <span class="bg-brand-purple/20 text-brand-purple px-2 py-0.5 rounded">RESTAURANTES DE CACHOEIRO</span> E NEM
                             SEMPRE TEMOS VAGAS ABERTAS PARA NOVOS PARCEIROS
                         </h3>
                         
-                        <p class="text-gray-400 mb-10 text-[14px] md:text-[16px] leading-relaxed relative z-10">
+                        <p class="font-roboto text-gray-400 mb-10 text-[14px] md:text-[16px] leading-relaxed relative z-10">
                             Agarre a oportunidade e receba uma assessoria de crescimento da maior especialista da América Latina.
                         </p>
 
-                        <a href="#contato" class="w-full inline-block bg-gradient-to-r from-brand-purple to-brand-pink text-white px-8 py-5 rounded-xl font-bold text-[15px] hover:scale-105 transition-all shadow-[0_0_20px_rgba(217,70,239,0.3)] uppercase tracking-wider relative z-10">
+                        <a href="#contato" class="font-sans inline-flex items-center justify-center bg-gradient-to-r from-brand-purple to-brand-pink text-white py-[16px] px-[50px] rounded-[5px] font-[700] text-[18px] leading-none hover:scale-105 transition-all shadow-[0_4px_25px_rgba(217,70,239,0.4)] tracking-wide relative z-10 w-auto mt-4 max-w-full">
                             Agende já uma reunião
                         </a>
                     </div>
