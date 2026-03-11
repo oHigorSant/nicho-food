@@ -86,3 +86,4 @@ function addAnimation() {
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.addEventListener("DOMContentLoaded", addAnimation);
 }
+
