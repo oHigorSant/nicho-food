@@ -73,80 +73,78 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
+       document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inicializa Ícones
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
-            // 1. MÁSCARA DE TELEFONE AUTOMÁTICA
-            const phoneInput = document.getElementById('phone');
-            phoneInput.addEventListener('input', (e) => {
-                let v = e.target.value.replace(/\D/g, '');
-                if (v.length > 11) v = v.slice(0, 11);
-                
-                if (v.length > 10) {
-                    v = v.replace(/^(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-                } else if (v.length > 6) {
-                    v = v.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-                } else if (v.length > 2) {
-                    v = v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
-                } else if (v.length > 0) {
-                    v = v.replace(/^(\d{0,2})/, '($1');
-                }
-                e.target.value = v;
-            });
-
-            // 2. ENVIO DOS DADOS
-            const form = document.getElementById('foodForm');
-            const btn = document.getElementById('btnEnviar');
-
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const originalText = btn.innerHTML;
-                btn.disabled = true;
-                btn.innerHTML = "Enviando...";
-
-                const tel = phoneInput.value.replace(/\D/g, '');
-                const ddi = document.getElementById('countryCode').value.replace(/\D/g, '');
-                const params = new URLSearchParams(window.location.search);
-
-                const payload = {
-                    nome: document.getElementById('nome').value,
-                    empresa: document.getElementById('empresa').value,
-                    telefone: ddi + tel,
-                    // O campo objetivo concatena os dados para facilitar a leitura na dashboard
-                    objetivo: `Fat: ${document.getElementById('faturamento').value} | Seg: ${document.getElementById('segmento').value}`,
-                    origem: "Nicho Food", // RÓTULO FIXO PARA SUA TRIAGEM
-                    utm_source: params.get('utm_source') || 'Nicho Food',
-                    utm_campaign: params.get('utm_campaign') || 'Direto'
-                };
-
-                try {
-                    const response = await fetch('https://api.zoopcompany.com.br/api/novo_lead_site', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (response.ok) {
-                        btn.innerHTML = "Recebido!";
-                        btn.classList.replace('from-purple-600', 'bg-green-600');
-                        alert("Pedido de diagnóstico recebido! Nosso especialista em Food Service entrará em contato.");
-                        form.reset();
-                    } else {
-                        alert("Erro ao enviar. Tente novamente ou chame no Whats.");
-                    }
-                } catch (error) {
-                    alert("Falha na conexão com o servidor.");
-                } finally {
-                    setTimeout(() => {
-                        btn.disabled = false;
-                        btn.innerHTML = originalText;
-                        btn.classList.remove('bg-green-600');
-                        btn.classList.add('from-purple-600');
-                    }, 3000);
-                }
-            });
+    // 2. FUNÇÃO DA MÁSCARA (Ajustada para funcionar enquanto digita)
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let v = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+            if (v.length > 11) v = v.slice(0, 11); // Limita a 11 dígitos
+            
+            if (v.length > 10) {
+                v = v.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+            } else if (v.length > 5) {
+                v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+            } else if (v.length > 2) {
+                v = v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+            } else if (v.length > 0) {
+                v = v.replace(/^(\d{0,2})/, '($1');
+            }
+            e.target.value = v;
         });
+    }
+
+    // 3. LÓGICA DE ENVIO
+    const form = document.getElementById('foodForm');
+    const btn = document.getElementById('btnEnviar');
+
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = "Enviando...";
+
+            const telRaw = phoneInput.value.replace(/\D/g, '');
+            const params = new URLSearchParams(window.location.search);
+
+            const payload = {
+                nome: document.getElementById('nome').value,
+                empresa: document.getElementById('empresa').value,
+                telefone: '55' + telRaw, // Adiciona o 55 automático
+                objetivo: `Fat: ${document.getElementById('faturamento').value} | Seg: ${document.getElementById('segmento').value}`,
+                origem: "Nicho Food",
+                utm_source: params.get('utm_source') || 'Nicho Food',
+                utm_campaign: params.get('utm_campaign') || 'Direto'
+            };
+
+            try {
+                const response = await fetch('https://api.zoopcompany.com.br/api/novo_lead_site', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    alert("Sucesso! Entraremos em contato.");
+                    form.reset();
+                } else {
+                    alert("Erro no servidor. Tente novamente.");
+                }
+            } catch (error) {
+                alert("Falha na conexão.");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        });
+    }
+});
     </script>
 </body>
 </html>
+
